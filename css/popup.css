@@ -63,6 +63,10 @@ input:focus, button:focus {
   margin-bottom: 20px;
 }
 
+#account-list li {
+  margin-bottom: 6px;
+}
+
 .account-tag {
   display: inline-block;
   width: 160px;
