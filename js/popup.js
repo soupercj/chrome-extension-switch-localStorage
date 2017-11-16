@@ -14,8 +14,8 @@ $(function() {
           <li>\
             <span class="account-tag">' + key + '</span>\
             <input type="text" value="' + value + '" hidden/>\
-            <button class="switch-button btn" type="button">切换</button>\
-            <button class="delete-button btn" type="button">删除</button>\
+            <button class="switch-button btn" type="button">switch</button>\
+            <button class="delete-button btn" type="button">delete</button>\
           </li>\
         ')
       }
@@ -57,8 +57,7 @@ $(function() {
   $('#add').click(function() {
     let tagContent = $('#tag').val()
     if (tagContent.trim() === '') {
-      $('#error').text('标签不允许为空')
-      // console.log('内容不允许为空');
+      $('#error').text('null is not allowed')
     } else {
       // 发送消息给content_scripts获取native localstorage
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -72,8 +71,8 @@ $(function() {
               <li>\
                 <span class="account-tag">' + tagContent + '</span>\
                 <input type="text" value="' + value + '" hidden/>\
-                <button class="switch-button btn" type="button">切换</button>\
-                <button class="delete-button btn" type="button">删除</button>\
+                <button class="switch-button btn" type="button">switch</button>\
+                <button class="delete-button btn" type="button">delete</button>\
               </li>\
             ')
             $('#tag').val('')

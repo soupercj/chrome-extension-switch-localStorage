@@ -11,7 +11,6 @@ $(function() {
   // console.log('content.js loaded...')
   // 监听来自popup的add switch消息
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log('我收到popup发来的消息了')
     if (request.type === 'add') {
       // 获取localstorage
       const localStorage = window.localStorage

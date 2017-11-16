@@ -1,16 +1,13 @@
 {
 	"manifest_version": 2,
-	"name": "DevAccountSwitch",
-	"description": "switch account for developing",
+	"name": "DevLocalStorageSwitch",
+	"description": "switch localStorage for developing",
 	"version": "0.1",
 	"icons": {
-		"16": "images/16.png"
+		"16": "images/switch-16.png",
+    "48": "images/switch-48.png"
 	},
 	"browser_action": {
-		"default_icon": {
-			"16": "images/16.png"
-		},
-		"default_title": "show weather",
 		"default_popup": "popup.html"
 	},
 	"permissions": [
