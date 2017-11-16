@@ -1,0 +1,81 @@
+/*
+ * 通用属性
+ */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 400px;
+  height: 400px;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.btn {
+  height: 30px;
+  width: 60px;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+}
+
+.btn:active {
+  opacity: 0.5;
+}
+
+/*
+ * 非通用属性
+ */
+.popup-container {
+  /*border: 1px solid red;*/
+  padding: 10px;
+  font-size: 14px;
+}
+
+/*
+ * 添加账号
+ */
+.tag-input {
+  border: 1px solid #ccc;
+  height: 26px;
+  width: 160px;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.tag-input:focus {
+  border: 1px solid #A9DA98;
+}
+
+.add-button {
+  background-color: #A9DA98;
+}
+
+/*
+ * 账号列表
+ */
+.account-wrapper {
+  margin-bottom: 20px;
+}
+
+.account-tag {
+  display: inline-block;
+  width: 160px;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+}
+
+.switch-button, .delete-button {
+  height: 27px;
+  background-color: #448CA3;
+}
