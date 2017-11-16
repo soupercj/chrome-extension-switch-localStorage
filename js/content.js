@@ -1,5 +1,14 @@
 $(function() {
-  console.log('content.js loaded...')
+  function isJSON(s) {
+    let flag = true
+    try {
+      JSON.parse(s)
+    } catch(err) {
+      flag = false
+    }
+    return flag
+  }
+  // console.log('content.js loaded...')
   // 监听来自popup的add switch消息
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log('我收到popup发来的消息了')
@@ -21,8 +30,8 @@ $(function() {
     } else if (request.type === 'switch') {
       const switchMessageContent = request.content
       // update native localStorage
-      console.log('我收到了switch的消息了');
-      console.log(switchMessageContent)
+      // console.log('我收到了switch的消息了');
+      // console.log(switchMessageContent)
       window.localStorage.clear()
       const keys = Object.keys(switchMessageContent)
       for (const index in keys) {
@@ -35,13 +44,3 @@ $(function() {
     }
   })
 })
-
-function isJSON(s) {
-  let flag = true
-  try {
-    JSON.parse(s)
-  } catch(err) {
-    flag = false
-  }
-  return flag
-}

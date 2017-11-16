@@ -30,7 +30,7 @@ $(function() {
     const spanElement = ($(this).siblings('span'))[0];
     const spanText = $(spanElement).text()
     chrome.storage.local.remove(spanText, function() {
-      console.log('删除成功');
+      // console.log('删除成功');
       const parentLiElement = $(spanElement).parent('li')
       $(parentLiElement).remove()
     })
@@ -47,7 +47,7 @@ $(function() {
     // 发送消息
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {type: 'switch', content: switchMessageContent}, function(response) {
-        console.log('switch successfully');
+        // console.log('switch successfully');
       })
     })
   })
@@ -57,7 +57,7 @@ $(function() {
   $('#add').click(function() {
     let tagContent = $('#tag').val()
     if (tagContent.trim() === '') {
-      console.log('内容不允许为空');
+      // console.log('内容不允许为空');
     } else {
       // 发送消息给content_scripts获取native localstorage
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -82,13 +82,3 @@ $(function() {
     }
   })
 })
-
-function isJSON(s) {
-  let flag = true
-  try {
-    JSON.parse(s)
-  } catch(err) {
-    flag = false
-  }
-  return flag
-}
