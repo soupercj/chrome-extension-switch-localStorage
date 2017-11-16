@@ -57,6 +57,7 @@ $(function() {
   $('#add').click(function() {
     let tagContent = $('#tag').val()
     if (tagContent.trim() === '') {
+      $('#error').text('标签不允许为空')
       // console.log('内容不允许为空');
     } else {
       // 发送消息给content_scripts获取native localstorage
@@ -76,6 +77,7 @@ $(function() {
               </li>\
             ')
             $('#tag').val('')
+            $('#error').text('')
           })
         })
       })
