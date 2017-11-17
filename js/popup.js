@@ -1,7 +1,7 @@
 $(function() {
+  const utilObject = new Util()
   // 打开popup后立即取出chrome extension的localStorage然后渲染界面
   chrome.storage.local.get(null, function(res) {
-    // console.log(res);
     if (res) {
       const keys = Object.keys(res)
       for (const index in keys) {
@@ -10,14 +10,8 @@ $(function() {
         // 正则表达式将双引号换成单引号
         value = value.replace(/\"/g, '\'')
         // value = JSON.parse(value)
-        $('#account-list').append('\
-          <li>\
-            <span class="account-tag">' + key + '</span>\
-            <input type="text" value="' + value + '" hidden/>\
-            <button class="switch-button btn" type="button">switch</button>\
-            <button class="delete-button btn" type="button">delete</button>\
-          </li>\
-        ')
+        console.log(utilObject.getAccountLiHtml(key, value));
+        $('#account-list').append(utilObject.getAccountLiHtml(key, value))
       }
     }
   })
@@ -67,14 +61,7 @@ $(function() {
           d[tagContent] = JSON.stringify(messageContent)
           chrome.storage.local.set(d, function() {
             const value = d[tagContent].replace(/\"/g, '\'')
-            $('#account-list').append('\
-              <li>\
-                <span class="account-tag">' + tagContent + '</span>\
-                <input type="text" value="' + value + '" hidden/>\
-                <button class="switch-button btn" type="button">switch</button>\
-                <button class="delete-button btn" type="button">delete</button>\
-              </li>\
-            ')
+            $('#account-list').append(utilObject.getAccountLiHtml(tagContent, value))
             $('#tag').val('')
             $('#error').text('')
           })

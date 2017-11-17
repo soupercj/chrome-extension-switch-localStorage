@@ -1,13 +1,5 @@
 $(function() {
-  function isJSON(s) {
-    let flag = true
-    try {
-      JSON.parse(s)
-    } catch(err) {
-      flag = false
-    }
-    return flag
-  }
+  const utilObject = new Util()
   // console.log('content.js loaded...')
   // 监听来自popup的add switch消息
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -17,7 +9,7 @@ $(function() {
       const messageContent = {}
       const keys = Object.keys(localStorage)
       for (const index in keys) {
-        if (isJSON(localStorage[keys[index]])) {
+        if (utilObject.isJSON(localStorage[keys[index]])) {
           messageContent[keys[index]] = JSON.parse(localStorage[keys[index]])
         } else {
           messageContent[keys[index]] = localStorage[keys[index]]
