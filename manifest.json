@@ -17,7 +17,7 @@
 	],
   "content_scripts": [
     {
-      "matches": ["http://home.zaobang.net/*", "http://localhost:8888/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["js/jquery-3.2.1.min.js", "js/content.js", "js/util.js"]
     }
   ]
