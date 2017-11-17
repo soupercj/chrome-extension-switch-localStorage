@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Switch localStorage",
-	"description": "switch localStorage for developing",
+	"description": "Switch localStorage for developing",
 	"version": "0.2",
 	"icons": {
 		"16": "images/switch-16.png",

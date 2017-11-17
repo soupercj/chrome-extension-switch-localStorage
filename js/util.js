@@ -1,11 +1,13 @@
 function Util() {}
 
 Util.prototype = {
-  isJSON: function() {
+  isJSON: function(s) {
     let flag = true
     try {
       JSON.parse(s)
     } catch(err) {
+      // console.log('----util.js-----');
+      // console.log(err);
       flag = false
     }
     return flag
